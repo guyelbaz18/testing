@@ -8,11 +8,11 @@ pipeline {
         }
 	stage('test') {
 	    steps {
-		sh python -m pip install --upgrade pip
-          	sh pip install pylint
-	        sh pip install pytest 
-		sh pylint adding.py
-		sh pytest tests
+		sh 'python -m pip install --upgrade pip'
+          	sh 'pip install pylint'
+	        sh 'pip install pytest' 
+		sh 'pylint adding.py'
+		sh 'pytest tests'
 	    }
 	}
     }
