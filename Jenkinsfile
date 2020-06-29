@@ -8,8 +8,8 @@ pipeline {
         }
 	stage('test') {
 	    steps {
-          	sh 'pip install pylint'
-	        sh 'pip install pytest' 
+          	sh 'pip install pylint --user'
+	        sh 'pip install pytest --user' 
 		sh 'pylint adding.py'
 		sh 'pytest tests'
 	    }
