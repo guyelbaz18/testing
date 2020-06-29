@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'python:3.8' } }
+    agent { docker { image 'python:3.7' } }
     stages {
         stage('version') {
             steps {
@@ -8,8 +8,8 @@ pipeline {
         }
 	stage('test') {
 	    steps {
-          	sh 'pip install pylint --no-cache-dir'
-	        sh 'pip install pytest --no-cache-dir' 
+          	sh 'pip install pylint'
+	        sh 'pip install pytest' 
 		sh 'pylint adding.py'
 		sh 'pytest tests'
 	    }
