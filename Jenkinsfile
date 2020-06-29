@@ -8,10 +8,8 @@ pipeline {
         }
 	stage('test') {
 	    steps {
-		sh 'python -m venv myenv'
-		sh 'source myenv/bin/activate'
-          	sh 'pip install pylint'
-	        sh 'pip install pytest' 
+          	sh 'pip install pylint --no-cache-dir'
+	        sh 'pip install pytest --no-cache-dir' 
 		sh 'pylint adding.py'
 		sh 'pytest tests'
 	    }
