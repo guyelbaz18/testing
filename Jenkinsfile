@@ -13,5 +13,7 @@ pipeline {
 	        sh pip install pytest 
 		sh pylint adding.py
 		sh pytest tests
+	    }
+	}
     }
 }
